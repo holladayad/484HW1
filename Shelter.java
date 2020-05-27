@@ -15,7 +15,7 @@ public class Shelter {
     private int shelterID;
     private ArrayList<Animal> animals = new ArrayList<Animal>();
     private ArrayList<Worker> workers = new ArrayList<Worker>();
-    
+    private ArrayList<Animal> adopted = new ArrayList<Animal>();
     
     
     public Shelter(String street, String city, String state, String zipCode, String phoneNumber, String email)
@@ -47,6 +47,37 @@ public class Shelter {
     public ArrayList<Animal> getAnimals()
     {
         return this.animals;
+    }
+    
+    public void transfer(Shelter newShelter, int animalID)
+    {
+        for (int i = 0; i<animals.size(); i++)
+        {
+            Animal current = animals.get(i);
+            if (current.getAnimalID()== animalID)
+            {
+                newShelter.addAnimal(current);
+                animals.remove(i);
+                break;
+            }
+        }
+    }
+    
+    public boolean adopt(int animalID)
+    {
+        for (int i = 0; i<animals.size(); i++)
+        {
+            Animal current = animals.get(i);
+            if (current.getAnimalID()== animalID)
+            {
+                current.adopted();
+                animals.remove(i);
+                adopted.add(current);
+                return true;
+            }
+        }
+        return false;
+        
     }
     
     @Override

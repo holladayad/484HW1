@@ -1,5 +1,5 @@
 
-package CIS484.HW1.484HW1;
+package CIS484.HW1;
 
 import java.time.LocalDate;
 

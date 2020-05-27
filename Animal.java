@@ -4,7 +4,7 @@ package CIS484.HW1;
 import java.time.*;
 import java.util.ArrayList;
 
-public class Animal {
+public class Animal{
     
     public static int nextID = 0;
     private String name;
@@ -38,6 +38,37 @@ public class Animal {
     {
         return this.appointments;
     }
+    
+    public int getAnimalID()
+    {
+        return animalID;
+    }
+    public String getName()
+    {
+        return this.name;
+    }
+    public String getBreed()
+    {
+        return this.breed;
+    }
+    public String getGender()
+    {
+        return this.gender;
+    }
+    public int getAge()
+    {
+        return this.age;
+    }
+    public LocalDate getIntakeDate()
+    {
+        return this.intakeDate;
+    }
+    
+    public void adopted()
+    {
+        this.outtakeDate = LocalDate.now();
+    }
+    
     @Override
     public String toString(){
         String outtake = "";

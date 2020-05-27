@@ -44,9 +44,7 @@ public class Worker {
             this.supervisees = null;
         }
     }
-    public String getWorkStatus(){
-        return this.workStatus;
-    }
+    
     public boolean setSupervisor(Worker supervisor){
         if(supervisor.getWorkStatus().equals("Supervisor"))
         {
@@ -70,6 +68,35 @@ public class Worker {
     public void addAnimal(Animal animal){
         this.animalsCaredFor.add(animal);
     }
+    
+    public int getWorkerID()
+    {
+        return this.workerId;
+    }
+    public String getFirstName()
+    {
+        return this.firstName;
+    }
+    public String getLastName()
+    {
+        return this.lastName;
+    }
+    public String getPhoneNumber()
+    {
+        return this.phoneNumber;
+    }
+    public String getEmail()
+    {
+        return this.email;
+    }
+    public String getWorkStatus()
+    {
+        return this.workStatus;
+    }
+    public double getHourlyPay()
+    {
+        return this.hourlyPay;
+    }
     @Override
     public String toString()
     {
@@ -87,7 +114,7 @@ public class Worker {
                 + "Last Name: %s\n"
                 + "Phone Number: %s\n"
                 + "Work Status: %s\n"
-                + "Hourly: %d\n"
+                + "Hourly: %f\n"
                 + "Email: %s\n"
                 + schedule + supervisor, this.firstName, this.lastName, 
                 this.phoneNumber, this.workStatus, this.hourlyPay, this.email);
